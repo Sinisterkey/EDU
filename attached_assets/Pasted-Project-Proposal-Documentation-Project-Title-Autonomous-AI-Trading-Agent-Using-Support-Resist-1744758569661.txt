@@ -1,0 +1,221 @@
+Project Proposal & Documentation
+
+Project Title:
+
+Autonomous AI Trading Agent Using Support & Resistance on XAUUSD (30M Timeframe)
+
+Project Summary:
+
+This project aims to build an autonomous AI trading agent that specializes in the support and resistance-based strategy. The agent will be trained using reinforcement learning and unsupervised techniques to detect key zones, execute trades, and learn from its mistakes in a closed feedback loop. The project will be limited to trading XAUUSD on the 30-minute timeframe, offering a focused environment for accuracy, repeatability, and consistency.
+
+Technologies & Tools:
+
+Core Technologies:
+
+Python – Main development language.
+
+MetaTrader 5 (MT5) – Trading platform (Python API used).
+
+scikit-learn – For unsupervised clustering (support/resistance zone detection using DBSCAN).
+
+Stable Baselines3 / RLlib – For reinforcement learning implementation.
+
+Pandas, NumPy – Data processing.
+
+Matplotlib/Plotly – Visualization.
+
+VectorBT – For advanced backtesting.
+
+PostgreSQL – Data storage.
+
+Flask + React – Web dashboard for real-time monitoring.
+
+TradingView WebSocket API – For real-time candlestick and volume data.
+
+Scope:
+
+In-Scope:
+
+One asset: XAUUSD.
+
+One timeframe: 30-minute.
+
+Trading logic: Support and resistance + candlestick breakouts with volume confirmation.
+
+Learning: Reinforcement learning with incremental and periodic retraining.
+
+Monitoring: Web-based real-time dashboard.
+
+Testing: Backtesting and demo trading on MT5.
+
+Execution: Limit orders with slippage control, retry logic for failed orders.
+
+Out-of-Scope (for now):
+
+Multi-instrument trading.
+
+Multi-timeframe analysis.
+
+News-based sentiment analysis.
+
+Core Features
+
+1. Support & Resistance Zone Detection
+
+Use DBSCAN clustering to group historical turning points.
+
+Identify high-probability reversal or breakout zones.
+
+Update dynamically based on the last 50 candles.
+
+2. Reinforcement Learning Trading Agent
+
+Observes the last 50 candles around S/R zones.
+
+PPO (Proximal Policy Optimization) reinforcement learning model.
+
+Actions: Buy, Sell, Hold, with configurable lot size (default: 0.02).
+
+Reward function:
+
+Profit/Loss from trade.
+
+Penalty for hitting stop loss.
+
+Bonus for achieving 1:3 risk/reward.
+
+3. Trade Management
+
+Entry only after candle closes above resistance or below support with confirmed volume breakout.
+
+If volume is not confirmed, wait for confirmation candle.
+
+Agent enters trade immediately once criteria are met.
+
+Risk/Reward ratio: Fixed at 1:3.
+
+Stop Loss and Take Profit calculated accordingly.
+
+Use limit orders to control slippage.
+
+Monitor spread via MT5 API.
+
+Implement retry logic for failed orders.
+
+Broker execution verification.
+
+4. Learning from Mistakes
+
+Failed trades logged and analyzed in PostgreSQL.
+
+Incremental learning supported.
+
+Retraining triggered:
+
+After significant performance drops.
+
+Periodically (e.g., weekly).
+
+5. Real-Time Dashboard
+
+Web-based dashboard built with Flask + React.
+
+Metrics displayed:
+
+Equity
+
+Open trades
+
+Trade history
+
+Agent decision logs
+
+Agent status: [Active/Idle/Retraining/Error]
+
+Current balance
+
+Cumulative return
+
+P/L Today, This Week, This Month
+
+Win rate
+
+Avg. Profit/Trade
+
+Avg. Loss/Trade
+
+Sharpe Ratio
+
+Max Drawdown
+
+Live streaming candlestick chart for XAUUSD (30M) from TradingView
+
+Browser-based kill switch and manual override panel
+
+6. Logging & Fail-Safes
+
+All trades logged for auditing.
+
+Manual control features:
+
+Pause/resume agent.
+
+Force close trades.
+
+Manual entry override.
+
+Browser-based emergency stop.
+
+Risk Management
+
+Lot size fixed at 0.02 during training.
+
+Max 2% capital risk per trade.
+
+Trade suspension triggers:
+
+3 consecutive losses.
+
+Daily drawdown > 5%.
+
+Execution or system error.
+
+Roadmap
+
+Phase 1: Environment Setup
+
+
+
+Phase 2: AI Agent Training
+
+
+
+Phase 3: Web Dashboard & Integration
+
+
+
+Phase 4: Execution Logic & Deployment
+
+
+
+Evaluation Metrics
+
+Win rate (%)
+
+Average risk/reward ratio
+
+Maximum drawdown (%)
+
+Number of trades
+
+Cumulative return
+
+Sharpe Ratio
+
+Avg. Profit/Trade and Avg. Loss/Trade
+
+Execution success rate
+
+Final Thoughts
+
+This project aims for a production-grade, self-improving trading AI, focused entirely on XAUUSD at the 30-minute timeframe. Combining reinforcement learning, smart clustering, volume confirmation, real-time monitoring, execution verification, and recovery logic makes this a robust and scalable system. It will start on a demo account, continually learn from its mistakes, and adapt its trading logic without human intervention.

@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-md-12 text-center">
+            <h1 class="display-4 fw-bold">AI Trading Agent</h1>
+            <p class="lead">Autonomous trading using Support & Resistance on XAUUSD (30M Timeframe)</p>
+            <a href="/dashboard" class="btn btn-primary btn-lg mt-3">
+                <i class="fas fa-chart-line me-2"></i>Go to Dashboard
+            </a>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-brain text-primary me-2"></i>AI-Powered Trading
+                    </h5>
+                    <p class="card-text">
+                        Harness the power of Reinforcement Learning to make trading decisions. The agent learns from its past trades and continuously improves its strategy.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-chart-area text-success me-2"></i>Support & Resistance
+                    </h5>
+                    <p class="card-text">
+                        Advanced DBSCAN clustering algorithm identifies key support and resistance zones for more accurate trade entries and exits.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-robot text-info me-2"></i>Autonomous Execution
+                    </h5>
+                    <p class="card-text">
+                        Fully automated trading with MetaTrader 5 integration. The agent handles everything from analysis to execution with built-in risk management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <h4 class="mb-0">Getting Started</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>1. Connect to MetaTrader 5</h5>
+                            <p>
+                                Ensure you have MetaTrader 5 installed and running. The agent will connect to it to retrieve market data and execute trades.
+                            </p>
+                            <h5>2. Train the Agent</h5>
+                            <p>
+                                The agent uses reinforcement learning to improve its strategy. Start with the pre-trained model or train it on your historical data.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>3. Configure Risk Settings</h5>
+                            <p>
+                                Set your risk preferences, including lot size, risk per trade, and maximum drawdown to ensure safe trading.
+                            </p>
+                            <h5>4. Activate and Monitor</h5>
+                            <p>
+                                Activate the agent and monitor its performance through the real-time dashboard. You can intervene at any time if needed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <h4 class="mb-0">Core Features</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-cluster text-warning me-2"></i>
+                                    <strong>DBSCAN Clustering</strong> for S/R Zone Detection
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-graduation-cap text-warning me-2"></i>
+                                    <strong>Reinforcement Learning</strong> for Decision Making
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-exchange-alt text-warning me-2"></i>
+                                    <strong>MetaTrader 5 Integration</strong> for Live Trading
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-shapes text-warning me-2"></i>
+                                    <strong>Candlestick Pattern</strong> Recognition
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-chart-bar text-info me-2"></i>
+                                    <strong>Volume Confirmation</strong> for Breakouts
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-shield-alt text-info me-2"></i>
+                                    <strong>Risk Management</strong> with Adjustable Parameters
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-database text-info me-2"></i>
+                                    <strong>Trade Logging</strong> and Performance Analytics
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <i class="fas fa-bell text-info me-2"></i>
+                                    <strong>Email Notifications</strong> for Trade Events
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

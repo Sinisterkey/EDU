@@ -1,0 +1,108 @@
+/* 
+ * Custom styles for AI Trading Agent
+ * Core styles come from bootstrap-agent-dark-theme.min.css
+ */
+
+/* General enhancements */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+}
+
+/* Chart container styles */
+#chart-container {
+    width: 100%;
+    background-color: var(--bs-dark);
+    border-radius: 5px;
+}
+
+/* Indicator colors for agent status */
+.status-active {
+    color: var(--bs-success);
+}
+
+.status-idle {
+    color: var(--bs-secondary);
+}
+
+.status-error {
+    color: var(--bs-danger);
+}
+
+.status-training {
+    color: var(--bs-info);
+}
+
+/* Trade decision card styling */
+.decision-buy {
+    border-left: 5px solid var(--bs-success);
+}
+
+.decision-sell {
+    border-left: 5px solid var(--bs-danger);
+}
+
+.decision-hold {
+    border-left: 5px solid var(--bs-warning);
+}
+
+/* Support/Resistance zone styling */
+.zone-item {
+    border-left: 4px solid;
+    margin-bottom: 5px;
+}
+
+.zone-resistance {
+    border-left-color: var(--bs-danger);
+}
+
+.zone-support {
+    border-left-color: var(--bs-success);
+}
+
+/* Table cell alignments */
+.table th, .table td {
+    vertical-align: middle;
+}
+
+/* Profit/Loss coloring */
+.profit {
+    color: var(--bs-success);
+}
+
+.loss {
+    color: var(--bs-danger);
+}
+
+/* Emergency button styling */
+.btn-danger {
+    font-weight: bold;
+}
+
+/* Loading indicator */
+.loading-spinner {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.2em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+}
